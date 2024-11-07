@@ -1,4 +1,4 @@
-# ecoengage
+# Ecoengage
 Website of ecoengage, a starup of grade 10 students
 Startup Summary
 
