@@ -1,0 +1,232 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #020122; /* Oxford Blue */
+  color: #020122; /* Oxford Blue */
+  padding: 10px;
+}
+
+/* Header */
+header {
+  background: #2c6e49; /* Dark Spring Green */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows content to wrap for smaller screens */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-left: 180px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #dff9ea; /* Light Green */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f7e8d9; /* Persian Orange, hover effect */
+}
+
+/* Headings */
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+/* Hero Section */
+#hero {
+  background: url('hero-image.jpg') no-repeat center center/cover; /* Placeholder for a hero image */
+  color: #7fe8a9; /* Light Green 600 */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#hero h2 {
+  font-size: 2.5em;
+}
+
+#hero p {
+  font-size: 1.2em;
+}
+
+/* Button */
+button {
+  background-color: #d68c45; /* Persian Orange */
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button a {
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.5s ease 3s;
+}
+
+button:hover {
+  background-color: #e5e9d3; /* Reseda Green 900 */
+}
+
+/* Section */
+section {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: #f7e8d9; /* Light Persian Orange */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #707c3d; /* Reseda Green */
+  color: #dff9ea; /* Light Green 900 */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #61e294; /* Light Green */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #d68c45; /* Persian Orange */
+}
+
+/* Logo and Header Div */
+.logo {
+  width: 65px;
+  height: 65px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+#header_div {
+  display: flex;
+  align-items: center;
+}
+
+.team-photo {
+  clip-path: ellipse();
+  height: 120px;
+  width: 100px;
+}
+
+/* Responsive Styles */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  /* Adjust header layout for smaller screens */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin: 10px 0;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  #hero {
+    padding: 40px 15px;
+  }
+
+  #hero h2 {
+    font-size: 2em;
+  }
+
+  #hero p {
+    font-size: 1.1em;
+  }
+
+  section {
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  #hero {
+    padding: 30px 10px;
+  }
+
+  #hero h2 {
+    font-size: 1.8em;
+  }
+
+  #hero p {
+    font-size: 1em;
+  }
+
+  nav ul {
+    align-items: flex-start;
+  }
+
+  footer {
+    font-size: 0.9em;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .team-photo {
+    height: 100px;
+    width: 80px;
+  }
+
+  section {
+    padding: 10px;
+    margin: 5px auto;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}

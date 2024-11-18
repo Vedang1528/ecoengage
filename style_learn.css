@@ -1,0 +1,226 @@
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #020122;
+    color: #2c6e49;
+    text-align: center;
+}
+
+h1{
+    margin: 15px;
+    padding: auto;
+    color: white;
+}
+
+/* Header styling */
+header {
+    background: #2c6e49;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.header-div {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+
+nav ul {
+    list-style-type: none;
+    align-self: flex-end;
+    align-items: end;
+    margin-left: 180px;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #dff9ea; /* Light Green */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f7e8d9; /* Persian Orange, hover effect */
+  }
+
+/* Waste boxes container styling */
+.waste-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Waste box styling */
+.waste-box {
+    position: relative;
+    background-color: #61e294;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.75s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.waste-box:hover {
+    transform: translateY(-15px);
+    
+}
+
+.waste-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.waste-info {
+    padding: 10px;
+}
+
+.dispose-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 10px;
+    text-align: center;
+}
+
+.waste-box:hover .dispose-message {
+    opacity: 1;
+}
+
+/* Footer styling */
+footer {
+    background: #2c6e49;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    body {
+      padding: 5px;
+    }
+  
+    /* Adjust header layout for smaller screens */
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      margin: 10px 0;
+      align-items: flex-start;
+    }
+  
+    nav ul li {
+      margin: 5px 0;
+    }
+  
+    #hero {
+      padding: 40px 15px;
+    }
+  
+    #hero h2 {
+      font-size: 2em;
+    }
+  
+    #hero p {
+      font-size: 1.1em;
+    }
+  
+    section {
+      max-width: 90%;
+      margin: 10px auto;
+      padding: 15px;
+    }
+  }
+  
+  /* Mobile (480px and below) */
+  @media (max-width: 480px) {
+    body {
+      padding: 5px;
+    }
+  
+    header h1 {
+      font-size: 1.5em;
+    }
+  
+    #hero {
+      padding: 30px 10px;
+    }
+  
+    #hero h2 {
+      font-size: 1.8em;
+    }
+  
+    #hero p {
+      font-size: 1em;
+    }
+  
+    nav ul {
+      align-items: flex-start;
+    }
+  
+    footer {
+      font-size: 0.9em;
+    }
+  
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .team-photo {
+      height: 100px;
+      width: 80px;
+    }
+  
+    section {
+      padding: 10px;
+      margin: 5px auto;
+    }
+  
+    button {
+      padding: 8px 15px;
+      font-size: 0.9em;
+    }
+  }
+  

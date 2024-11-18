@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pune Locations Map</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css"> <!-- Link to main CSS for consistent styling -->
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+  <style>
+    /* Additional map-specific styling */
+    #container {
+      display: flex;
+      flex-wrap: wrap; /* Ensure responsiveness */
+      margin: 20px;
+    }
+
+    #map {
+      flex: 1 1 50%; /* Take half width */
+      height: 500px; /* Adjust height */
+      margin-right: 20px;
+    }
+
+    #info-panel {
+      flex: 1 1 45%; /* Take the remaining width */
+      background: #f7e8d9; /* Light Persian Orange */
+      border-radius: 8px;
+      padding: 20px;
+      color: #333;
+    }
+
+    #info-panel img {
+      max-width: 100%; /* Ensure the image fits the panel */
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div id="header_div">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>Ecoengage - Collection Points</h1>
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="key-features.html">Features</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Container for map and info panel -->
+  <div id="container">
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Info Panel -->
+    <div id="info-panel">
+      <h2>Location Details</h2>
+      <img id="location-image" src="placeholder.jpg" alt="Location Image" />
+      <p id="location-name"><b>Name:</b> --</p>
+      <p id="location-contact"><b>Contact:</b> --</p>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <script>
+    // Initialize the map centered on Pune
+    var map = L.map('map').setView([18.5204, 73.8567], 12);
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Define custom icons
+    var greenIcon = L.icon({
+      iconUrl: 'plastic_icon.png',
+      iconSize: [30, 40],
+      iconAnchor: [15, 40],
+      popupAnchor: [0, -40]
+    });
+
+    var orangeIcon = L.icon({
+      iconUrl: 'e_waste_icon.png',
+      iconSize: [30, 40],
+      iconAnchor: [15, 40],
+      popupAnchor: [0, -40]
+    });
+
+    var blueIcon = L.icon({
+      iconUrl: 'metal_icon.png',
+      iconSize: [30, 40],
+      iconAnchor: [15, 40],
+      popupAnchor: [0, -40]
+    });
+
+    var redIcon = L.icon({
+      iconUrl: 'paper_icon.png',
+      iconSize: [30, 40],
+      iconAnchor: [15, 40],
+      popupAnchor: [0, -40]
+    });
+
+    // Array of locations with details
+    var locations = [
+      {
+        name: "Ecoengage - Kothrud",
+        lat: 18.5074,
+        lng: 73.8077,
+        contact: "923228456",
+        icon: greenIcon,
+        image: "kothrud.jpg"
+      },
+      {
+        name: "Ecoengage - Koregaon Park",
+        lat: 18.5362,
+        lng: 73.8957,
+        contact: "771966721",
+        icon: orangeIcon,
+        image: "koregaon.jpg"
+      },
+      {
+        name: "Ecoengage - Katraj",
+        lat: 18.4577,
+        lng: 73.8657,
+        contact: "842725849",
+        icon: blueIcon,
+        image: "katraj.jpg"
+      },
+      {
+        name: "Ecoengage - Baner",
+        lat: 18.5583,
+        lng: 73.7841,
+        contact: "904951738",
+        icon: redIcon,
+        image: "baner.jpg"
+      }
+    ];
+
+    // Display location details in the info panel
+    function displayLocationDetails(location) {
+      document.getElementById('location-name').textContent = `Name: ${location.name}`;
+      document.getElementById('location-contact').textContent = `Contact: ${location.contact}`;
+      document.getElementById('location-image').src = location.image;
+    }
+
+    // Loop through each location and add a marker with its respective icon
+    locations.forEach(function(location) {
+      L.marker([location.lat, location.lng], { icon: location.icon })
+        .addTo(map)
+        .on('click', function () {
+          displayLocationDetails(location);
+        });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Community Waste Management Platform. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:info@wastemanagement.com">info@wastemanagement.com</a></p>
+  </footer>
+
+</body>
+</html>

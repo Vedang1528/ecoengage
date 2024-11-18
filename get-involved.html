@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="x-icon" href="logo.png" />
+    <title>Get Involved - Community Waste Management Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to your CSS file -->
+  </head>
+  <body>
+    <header>
+      <div id="header_div">
+        <img src="logo.png" alt="Logo" class="logo" />
+        <h1>Get Involved</h1>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="key-features.html">Features</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Join Our Community</h2>
+        <p>
+          Be a part of the solution! Our platform invites you to join us in
+          making a positive impact on waste management in your community.
+          Together, we can create cleaner, healthier environments.
+        </p>
+      </section>
+
+      <section>
+        <h2>Volunteer Opportunities</h2>
+        <p>
+          We are always looking for enthusiastic volunteers to help with various
+          initiatives, including community clean-up events, educational
+          workshops, and outreach programs. Your involvement can make a real
+          difference!
+        </p>
+        <h3>How to Volunteer:</h3>
+        <ul>
+          <li>
+            Sign up for our newsletter to stay informed about upcoming events.
+          </li>
+          <li>
+            Follow us on social media for regular updates and opportunities.
+          </li>
+          <li>
+            Fill out our volunteer registration form below to get started.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Become a Partner</h2>
+        <p>
+          Are you a local business or organization? Partner with us to support
+          community challenges and educational initiatives. Together, we can
+          foster a culture of sustainability.
+        </p>
+        <h3>Partnership Benefits:</h3>
+        <ul>
+          <li>Increased visibility and recognition in the community.</li>
+          <li>Opportunities to engage with potential customers.</li>
+          <li>Impactful collaborations that promote sustainability.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sign Up to Get Involved</h2>
+        <form id="involvement-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2024 Community Waste Management Platform. All rights reserved.
+      </p>
+      <p>
+        Contact us:
+        <a href="mailto:info@wastemanagement.com">info@wastemanagement.com</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("ecoengage"); // Replace with your actual User ID from EmailJS
+      })();
+
+      document
+        .getElementById("involvement-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          // Send the email
+          emailjs
+            .send("ecoengage", "template_i6rdrrg", {
+              name: name,
+              email: email,
+              message: message,
+            })
+            .then(
+              function (response) {
+                alert("Your message has been sent successfully!"); // Success message
+                document.getElementById("involvement-form").reset(); // Reset form
+              },
+              function (error) {
+                alert("Oops! Something went wrong. Please try again later."); // Error message
+              }
+            );
+        });
+    </script>
+  </body>
+</html>
